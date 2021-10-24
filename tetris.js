@@ -11,3 +11,33 @@ const modal = document.getElementById("myModal");
 const instructionsButton = document.getElementById("instructions");
 const span = document.getElementsByClassName("close")[0];
 
+ctx.scale(20, 20);
+
+/*Utilisation de la méthode addEventListener() pour programmer nos boutons start, reset, instructions,
+    et l'élément closing <button>
+ */
+
+
+startButton.addEventListener("click", () => {
+    update();
+    startButton.style.display = "none";
+});
+
+resetButton.addEventListener("click", () => {
+    location.reload();
+});
+
+instructionsButton.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+span.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
