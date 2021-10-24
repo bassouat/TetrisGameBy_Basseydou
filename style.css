@@ -1,0 +1,21 @@
+
+body {
+    background-image: url("https://i.ibb.co/YTN069M/tetris.jpg");
+    padding-top: 1em;
+    text-align: center;
+    background-size: cover;
+}
+
+h2,
+h3,
+h4 {
+    font-family: "Press Start 2P", monospace;
+    color: white;
+}
+p {
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.5;
+    color: white;
+    font-size: 15px;
+}
+
