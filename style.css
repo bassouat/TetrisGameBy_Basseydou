@@ -19,3 +19,37 @@ p {
     font-size: 15px;
 }
 
+/*Définition des boutons id d'attribut de tetris,score,instructions et les autres */
+
+#tetris {
+    border: solid 0.2em white;
+    background-color: black;
+}
+#score {
+    font-family: "Press Start 2P", monospace;
+    color: white;
+}
+
+#start {
+    background-color: blue;
+    color: white;
+    padding: 0.5em;
+    margin: 0px 0px 25px 0px;
+    font-family: "Press Start 2P", monospace;
+}
+
+#reset {
+    background-color: red;
+    color: white;
+    padding: 0.5em;
+    margin: 0px 0px 25px 0px;
+    font-family: "Press Start 2P", monospace;
+}
+
+#instructions {
+    background-color: purple;
+    color: white;
+    padding: 0.5em;
+    margin: 0px 0px 25px 0px;
+    font-family: "Press Start 2P", monospace;
+}
