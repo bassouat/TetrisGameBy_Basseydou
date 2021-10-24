@@ -147,6 +147,69 @@ function collide(field, player) {
 
 /*Rotation de la pièce*/
 
+
+document.addEventListener("keydown", (e) => {
+    if (e.keyCode === 37) {
+        function playerMove(control) {
+            player.pos.x += control;
+            if (collide(field, player)) {
+                player.pos.x -= control;
+            }
+        }
+        playerMove(-1);
+    } else if (e.keyCode === 39) {
+        function playerMove(control) {
+            player.pos.x += control;
+            if (collide(field, player)) {
+                player.pos.x -= control;
+            }
+        }
+        playerMove(+1);
+    } else if (e.keyCode === 40) {
+        player.pos.y++;
+        if (collide(field, player)) {
+            player.pos.y--;
+            join(field, player);
+            player.pos.y = -2;
+        }
+        dCounter = 0;
+    } else if (e.keyCode === 65) {
+        const pos = player.pos.x;
+        let offset = 1;
+        function playerRotate(control) {
+            rotate(player.piece, control);
+        }
+        playerRotate(-1);
+        while (collide(field, player)) {
+            player.pos.x += offset;
+            offset = -(offset + (offset > 0 ? 1 : -1));
+            if (offset > player.piece[0].length) {
+                rotate(player.piece, control);
+                player.pos.x = pos;
+                return;
+            }
+        }
+    } else if (e.keyCode === 68) {
+        const pos = player.pos.x;
+        let offset = 1;
+        function playerRotate(control) {
+            rotate(player.piece, control);
+        }
+        playerRotate(+1);
+        while (collide(field, player)) {
+            player.pos.x += offset;
+            offset = -(offset + (offset > 0 ? 1 : -1));
+            if (offset > player.piece[0].length) {
+                rotate(player.piece, control);
+                player.pos.x = pos;
+                return;
+            }
+        }
+    }
+    console.log(field);
+    console.table(field);
+});
+
 function rotate(piece, control) {
     for (let y = 0; y < piece.length; y++) {
         for (let x = 0; x < y; x++) {
